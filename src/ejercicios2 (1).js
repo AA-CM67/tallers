@@ -157,7 +157,9 @@ function calcularPropina(total, porcentaje) {let propina = total * (porcentaje /
 // ██████  STRINGS Y VALIDACIONES ████████████████████████
 
 // Test 11:
-function esPalabraPalindroma(palabra) {
+function esPalabraPalindroma(palabra) {palabra = palabra.toLowerCase();
+  let invertida = palabra.split("").reverse().join("");
+  return palabra === invertida;
 	// Recibe un string.
 	// Devuelve true si la palabra se lee igual de izquierda a derecha
 	// y de derecha a izquierda (ignora mayúsculas/minúsculas).
