@@ -182,7 +182,10 @@ function contarVocales(texto) {texto = texto.toLowerCase();
 }
 
 // Test 13:
-function formatearNombre(nombre, apellido, mayusculas) {
+function formatearNombre(nombre, apellido, mayusculas) {if (mayusculas) return (nombre + " " + apellido).toUpperCase();
+  nombre = nombre.charAt(0).toUpperCase() + nombre.slice(1).toLowerCase();
+  apellido = apellido.charAt(0).toUpperCase() + apellido.slice(1).toLowerCase();
+  return nombre + " " + apellido;
 	// Recibe: nombre (string), apellido (string), mayusculas (boolean)
 	// Devuelve el nombre completo formateado:
 	// - Si mayusculas es true: "NOMBRE APELLIDO"
