@@ -18,9 +18,9 @@ function esMayorDeEdad(edad) {return edad >=18;
 }
 
 // Test 2:
-function clasificarTriangulo(lado1, lado2, lado3) {f (lado1 + lado2 <= lado3 || lado1 + lado3 <= lado2 || lado2 + lado3 <= lado1) {
+function clasificarTriangulo(lado1, lado2, lado3) {f (lado1 + lado2 <= lado3 || lado1 + lado3 <= lado2 || lado2 + lado3 <= lado1) 
     return "No es triángulo";
-  }
+  
   if (lado1 === lado2 && lado2 === lado3) return "Equilátero";
   if (lado1 === lado2 || lado1 === lado3 || lado2 === lado3) return "Isósceles";
   return "Escaleno";
@@ -80,7 +80,9 @@ function esAnioBisiesto(anio) {if (anio % 4 === 0 && anio % 100 !== 0) return tr
 // ██████  OPERADORES LÓGICOS Y MATEMÁTICOS ████████████████████████
 
 // Test 6:
-function validarContraseña(password) {
+function validarContraseña(password) {let mayuscula = /[A-Z]/.test(password);
+  let numero = /[0-9]/.test(password);
+  return password.length >= 8 && mayuscula && numero;
 	// Recibe un string con una contraseña.
 	// Devuelve true si cumple TODAS estas condiciones:
 	// - Tiene al menos 8 caracteres
@@ -92,7 +94,11 @@ function validarContraseña(password) {
 }
 
 // Test 7:
-function calcularIMC(peso, altura) {
+function calcularIMC(peso, altura) {let imc = peso / (altura * altura);
+  if (imc < 18.5) return "Bajo peso";
+  if (imc < 25) return "Peso normal";
+  if (imc < 30) return "Sobrepeso";
+  return "Obesidad";
 	// Recibe: peso (kg, número), altura (metros, número)
 	// Calcula el IMC: peso / (altura * altura)
 	// Devuelve un string con la clasificación:
