@@ -168,7 +168,12 @@ function esPalabraPalindroma(palabra) {palabra = palabra.toLowerCase();
 }
 
 // Test 12:
-function contarVocales(texto) {
+function contarVocales(texto) {texto = texto.toLowerCase();
+  let contador = 0;
+  for (let i = 0; i < texto.length; i++) {
+    if ("aeiou".includes(texto[i])) contador++;
+  }
+  return contador;
 	// Recibe un string.
 	// Devuelve el número total de vocales (a, e, i, o, u) que contiene.
 	// No distingue entre mayúsculas y minúsculas.
